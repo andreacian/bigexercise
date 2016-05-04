@@ -1,27 +1,27 @@
 <?php
 
-namespace Prodotti\Form;
+namespace InstructionForm\Form;
 
 use Zend\Form\Form;
 
-class ProdottoForm extends Form
+class InstructionForm extends Form
 {
-    public function __construct(array $listaCategorie)
+    public function __construct(array $listaIstruzioni)
     {
-        parent::__construct('prodotto');
+        parent::__construct('istruzioneForm');
         $this->setAttribute('method', 'post');
 
         $this->add([
-            'name'       => 'codice',
-            'type'       => 'Zend\Form\Element\Text',
+            'name'       => 'id',
+            'type'       => 'hidden',
             'options' => array(
-                 'label' => 'Codice',
+                 'label' => 'Id',
                  'label_attributes' => array(
                      'class' => 'control-label',
                  ),
             ),
             'attributes' => [
-                'id'       => 'codice',
+                'id'       => 'id',
                 'class'    => 'form-control'
             ]
         ]);
@@ -45,7 +45,7 @@ class ProdottoForm extends Form
             'name'       => 'descrizione',
             'type'       => 'Zend\Form\Element\Textarea',
             'options' => array(
-                 'label' => 'Descrizione',
+                 'label' => 'Istruzione',
                  'label_attributes' => array(
                      'class' => 'control-label',
                  ),
@@ -57,62 +57,16 @@ class ProdottoForm extends Form
         ]);
 
         $this->add([
-            'name'       => 'ingredienti',
+            'name'       => 'titolo',
             'type'       => 'Zend\Form\Element\Textarea',
             'options' => array(
-                 'label' => 'Ingredienti',
+                 'label' => 'Titolo',
                  'label_attributes' => array(
                      'class' => 'control-label',
                  ),
             ),
             'attributes' => [
-                'id'       => 'ingredienti',
-                'class'    => 'form-control'
-            ]
-        ]);
-
-        $this->add([
-            'name'       => 'prezzo',
-            'type'       => 'Zend\Form\Element\Text',
-            'options' => array(
-                 'label' => 'Prezzo',
-                 'label_attributes' => array(
-                     'class' => 'control-label',
-                 ),
-            ),
-            'attributes' => [
-                'id'       => 'prezzo',
-                'class'    => 'form-control'
-            ]
-        ]);
-
-        $this->add([
-            'name'       => 'categoria',
-            'type'       => 'Zend\Form\Element\Select',
-            'options' => array(
-                 'label' => 'Categoria',
-                 'label_attributes' => array(
-                     'class' => 'control-label',
-                 ),
-                 'value_options' => $listaCategorie,
-            ),
-            'attributes' => [
-                'id'       => 'categoria',
-                'class'    => 'form-control'
-            ]
-        ]);
-
-        $this->add([
-            'name'       => 'immagine',
-            'type'       => 'Zend\Form\Element\File',
-            'options' => array(
-                 'label' => 'Immagine',
-                 'label_attributes' => array(
-                     'class' => 'control-label',
-                 ),
-            ),
-            'attributes' => [
-                'id'       => 'immagine',
+                'id'       => 'titolo',
                 'class'    => 'form-control'
             ]
         ]);

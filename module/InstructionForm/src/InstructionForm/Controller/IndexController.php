@@ -16,15 +16,23 @@ class IndexController extends AbstractActionController
     public function indexAction()
     {
         return new ViewModel([
-            'lista' => $this->prodottiService->getListaForms()
+            'lista' => $this->instructionService->getListaForms()
         ]);
     }
 
-  /*  public function formsAction()
+
+    public function formsAction()
     {
-        $form = $this->formsService->getForm($this->params()->fromRoute('codice'));
+        $form = $this->formsService->getForm($this->params()->fromRoute('id'));
         return new ViewModel([
             'form' => $form
         ]);
     } */
+
+    public function indexAction()
+    {
+
+    }
+
+
 }

@@ -9,9 +9,9 @@ class IndexControllerFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
 
-        $formsService = $serviceLocator->getServiceLocator()->get('Form\Service\FormsService');
+        $instructionService = $serviceLocator->getServiceLocator()->get('InstructionForm\Service\InstructionService');
 
-        return new IndexController($formsService);
+        return new IndexController($instructionService);
 
     }
 

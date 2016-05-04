@@ -13,7 +13,7 @@ return array(
                         'controller' => 'InstructionForm\Controller\Index',
                         'action'        => 'index',
                     ),
-                ),
+                ), /*
                 'may_terminate' => true,
                 'child_routes' => array(
                     'default' => array(
@@ -28,7 +28,7 @@ return array(
                             ),
                         ),
                     ),
-                ), 
+                ), */
             ),
 
             // rotte area Admin
@@ -82,7 +82,7 @@ return array(
     'service_manager' => array(
         'factories' => array(
           //  'Prodotti\Service\ProdottiService' => Service\ProdottiServiceFactory::class,
-            'InstructionForm\Form\Instruction' => Form\InstructionFormFactory::class,
+            'InstructionForm\Service\InstructionService' => Form\InstructionFormFactory::class,
         ),
     ),
     'view_manager' => array(
@@ -90,7 +90,7 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
-  /*  'doctrine'        => [
+    'doctrine'        => [
         'driver' => [
             __NAMESPACE__ . '_driver' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
@@ -106,6 +106,7 @@ return array(
         ],
     ],
 
+/*
     // ACL
     'bjyauthorize' => [
         'guards' => [

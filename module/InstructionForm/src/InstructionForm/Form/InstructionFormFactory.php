@@ -1,6 +1,6 @@
 <?php
 
-namespace Prodotti\Form;
+namespace InstructionForm\Form;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
@@ -16,11 +16,11 @@ class InstructionFormFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $instructionService = $serviceLocator->get('Instruction\Service\ProdottiService');
+        $instructionService = $serviceLocator->get('InstructionForm\Service\InstructionService');
         $listaCategorie = $prodottiService->getArrayCategorie();
 
-        $inputFilter = new ProdottoInputFilter();
-        $form = new ProdottoForm($listaCategorie);
+        $inputFilter = new InstructionInputFilter();
+        $form = new instructionForm($listaForm);
 
         $form->setInputFilter($inputFilter);
 

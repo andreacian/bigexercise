@@ -11,7 +11,7 @@ class ProdottoInputFilter extends InputFilter
     {
 
         $this->add([
-            'name' => 'codice',
+            'name' => 'titolo',
             'required' => "true",
             'filters' => [
                 ['name' => 'StripTags'],
@@ -29,22 +29,11 @@ class ProdottoInputFilter extends InputFilter
         ]);
 
         $this->add([
-            'name' => 'prezzo',
+            'name' => 'descrizione',
             'required' => "true",
             'filters' => [
                 ['name' => 'StripTags'],
                 ['name' => 'StringTrim'],
-            ],
-            'validators' => [
-                ['name' => 'Zend\I18n\Validator\IsFloat']
-            ]
-        ]);
-
-        $this->add([
-            'name' => 'immagine',
-            'required' => "false",
-            'validators' => [
-                new \Zend\Validator\File\Extension(array('jpg'))
             ]
         ]);
 
