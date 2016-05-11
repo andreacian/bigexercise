@@ -1,25 +1,26 @@
-<form class="form-horizontal">
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Titolo</label>
-    <div class="col-sm-3">
-      <input type="text" class="form-control" placeholder="Titolo">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Nome</label>
-    <div class="col-sm-3">
-      <input type="text" class="form-control" placeholder="Nome">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Istruzioni</label>
-    <div class="col-sm-4">
-      <textarea class="form-control" rows="3"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Invia</button>
-    </div>
-  </div>
-</form>
+
+<a class="btn btn-primary" href="<?=$this->url('InstructionForm/nuovo')?>" role="button">Nuova Istruzione</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Titolo</th>
+            <th>Istruzione</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($this->lista as $instruction) { ?>
+        <tr>
+            <th scope="row"><?=$instruction->getNome()?></th>
+            <td><?=$instruction->getTitolo()?></td>
+            <td><?=$instructiont->getDescrizione()?></td>
+        <!--    <td>
+                <a class="btn btn-default" href="" role="button">modifica</a>
+                <a class="btn btn-default" href="<?//=$this->url('zfcadmin/prodotti/elimina', ['codice' => $prodotto->getCodice()])?>" role="button">elimina</a>
+            </td> -->
+        </tr>
+        <?php } ?>
+    </tbody>
+</table>

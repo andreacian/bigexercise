@@ -10,7 +10,7 @@ class IndexControllerFactory implements FactoryInterface
     {
 
         $instructionService = $serviceLocator->getServiceLocator()->get('InstructionForm\Service\InstructionService');
-
+        
         return new IndexController($instructionService);
 
     }
